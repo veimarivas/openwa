@@ -386,6 +386,14 @@ export class WwebjsLifecycle {
       ...(authTimeoutMs !== undefined ? { authTimeoutMs } : {}),
       ...(proxyAuthentication ? { proxyAuthentication } : {}),
       ...(versionPin ?? {}),
+      // Nombre del dispositivo que muestra el teléfono (Dispositivos vinculados).
+      // Solo aplica a vinculaciones nuevas (tras reiniciar el gateway).
+      ...(process.env.WWEBJS_DEVICE_NAME?.trim()
+        ? { deviceName: process.env.WWEBJS_DEVICE_NAME.trim() }
+        : {}),
+      ...(process.env.WWEBJS_BROWSER_NAME?.trim()
+        ? { browserName: process.env.WWEBJS_BROWSER_NAME.trim() }
+        : {}),
     });
     this.client = client;
 

@@ -134,6 +134,8 @@ export const BLANK_SHADOWED_ENV_KEYS: string[] = [
   'WWEBJS_WEB_VERSION',
   'WWEBJS_WEB_VERSION_REMOTE_PATH',
   'WWEBJS_AUTH_TIMEOUT_MS',
+  'WWEBJS_DEVICE_NAME',
+  'WWEBJS_BROWSER_NAME',
   // The remainder of the documented knob set, forwarded blank once the compose forwarding list was
   // completed (compose-parity.spec.ts now derives the required forwards from .env.example, so every
   // entry here exists because a `${KEY:-}` line renders blank when the operator sets nothing).
